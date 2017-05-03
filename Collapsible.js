@@ -182,4 +182,4 @@ class Collapsible extends Component {
   }
 }
 
-module.exports = Collapsible;
+export default Collapsible;
