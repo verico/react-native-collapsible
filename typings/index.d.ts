@@ -1,69 +1,52 @@
-// Type definitions for react-native-swiper 1.5
-// Project: https://github.com/leecade/react-native-swiper#readme
-// Definitions by: CaiHuan <https://github.com/CaiHuan>,  HuHuanming <https://github.com/huhuanming>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// TypeScript Version: 2.1
-
 import * as React from 'react';
-import {
-  ViewStyle
-} from 'react-native';
+import { EasingFunction, ViewStyle } from 'react-native';
 
-export interface SwiperProperties extends React.Props<Swiper> {
-  horizontal?: boolean;
 
-  style?: ViewStyle;
+export type Alignment =
+  'top' |
+  'center' |
+  'bottom';
 
-  pagingEnabled?: boolean;
+export type EasingMode =
+  'linear' |
+  'easeInQuad' |
+  'easeOutQuad' |
+  'easeInOutQuad' |
+  'easeInCubic' |
+  'easeOutCubic' |
+  'easeInOutCubic' |
+  'easeInQuart' |
+  'easeOutQuart' |
+  'easeInOutQuart' |
+  'easeInQuint' |
+  'easeOutQuint' |
+  'easeInOutQuint' |
+  'easeInSine' |
+  'easeOutSine' |
+  'easeInOutSine' |
+  'easeInExpo' |
+  'easeOutExpo' |
+  'easeInOutExpo' |
+  'easeInCirc' |
+  'easeOutCirc' |
+  'easeInOutCirc' |
+  'easeInElastic' |
+  'easeOutElastic' |
+  'easeInOutElastic' |
+  'easeInBack' |
+  'easeOutBack' |
+  'easeInOutBack' |
+  'easeInBounce' |
+  'easeOutBounce' |
+  'easeInOutBounce';
 
-  showsHorizontalScrollIndicator?: boolean;
-
-  showsVerticalScrollIndicator?: boolean;
-
-  bounces?: boolean;
-
-  scrollsToTop?: boolean;
-
-  removeClippedSubviews?: boolean;
-
-  automaticallyAdjustContentInsets?: boolean;
-
-  showsPagination?: boolean;
-
-  showsButtons?: boolean;
-
-  loadMinimal?: boolean;
-
-  loadMinimalSize?: number;
-
-  loadMinimalLoader?: JSX.Element;
-
-  loop?: boolean;
-
-  autoplay?: boolean;
-
-  autoplayTimeout?: number;
-
-  autoplayDirection?: boolean;
-
-  index?: number;
-
-  renderPagination?(index: number, total: number, thisObject: Swiper): JSX.Element;
-
-  dotStyle?: ViewStyle;
-
-  activeDotStyle?: ViewStyle;
-
-  dotColor?: string;
-
-  activeDotColor?: string;
-
-  height?: number;
-
-  width?: number;
-
-  paginationStyle?: ViewStyle;
+interface CollapsibleProps {
+  collapsed?: boolean;
+  align?: Alignment
+  collapsedHeight?: number;
+  duration?: number;
+  easing?: EasingFunction | EasingMode;
+  style?: ViewStyle
 }
 
-export default class Swiper extends React.Component<SwiperProperties, {}> {
-}
+export default class Collapsible extends React.Component<CollapsibleProps, {}> { }
