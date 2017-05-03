@@ -1,54 +1,69 @@
-declare namespace __ReactNativeCollapsible {
-  export type Alignment =
-    'top' |
-    'center' |
-    'bottom';
+// Type definitions for react-native-swiper 1.5
+// Project: https://github.com/leecade/react-native-swiper#readme
+// Definitions by: CaiHuan <https://github.com/CaiHuan>,  HuHuanming <https://github.com/huhuanming>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// TypeScript Version: 2.1
 
-  export type EasingMode =
-    'linear' |
-    'easeInQuad' |
-    'easeOutQuad' |
-    'easeInOutQuad' |
-    'easeInCubic' |
-    'easeOutCubic' |
-    'easeInOutCubic' |
-    'easeInQuart' |
-    'easeOutQuart' |
-    'easeInOutQuart' |
-    'easeInQuint' |
-    'easeOutQuint' |
-    'easeInOutQuint' |
-    'easeInSine' |
-    'easeOutSine' |
-    'easeInOutSine' |
-    'easeInExpo' |
-    'easeOutExpo' |
-    'easeInOutExpo' |
-    'easeInCirc' |
-    'easeOutCirc' |
-    'easeInOutCirc' |
-    'easeInElastic' |
-    'easeOutElastic' |
-    'easeInOutElastic' |
-    'easeInBack' |
-    'easeOutBack' |
-    'easeInOutBack' |
-    'easeInBounce' |
-    'easeOutBounce' |
-    'easeInOutBounce';
+import * as React from 'react';
+import {
+  ViewStyle
+} from 'react-native';
 
-  interface CollapsibleProps {
-    collapsed?: boolean;
-    align?: Alignment
-    collapsedHeight?: number;
-    duration?: number;
-    easing?: React.EasingFunction | EasingMode;
-    style?: React.ViewStyle
-  }
+export interface SwiperProperties extends React.Props<Swiper> {
+  horizontal?: boolean;
 
-  export default class Collapsible extends React.Component<CollapsibleProps, {}> { }
+  style?: ViewStyle;
+
+  pagingEnabled?: boolean;
+
+  showsHorizontalScrollIndicator?: boolean;
+
+  showsVerticalScrollIndicator?: boolean;
+
+  bounces?: boolean;
+
+  scrollsToTop?: boolean;
+
+  removeClippedSubviews?: boolean;
+
+  automaticallyAdjustContentInsets?: boolean;
+
+  showsPagination?: boolean;
+
+  showsButtons?: boolean;
+
+  loadMinimal?: boolean;
+
+  loadMinimalSize?: number;
+
+  loadMinimalLoader?: JSX.Element;
+
+  loop?: boolean;
+
+  autoplay?: boolean;
+
+  autoplayTimeout?: number;
+
+  autoplayDirection?: boolean;
+
+  index?: number;
+
+  renderPagination?(index: number, total: number, thisObject: Swiper): JSX.Element;
+
+  dotStyle?: ViewStyle;
+
+  activeDotStyle?: ViewStyle;
+
+  dotColor?: string;
+
+  activeDotColor?: string;
+
+  height?: number;
+
+  width?: number;
+
+  paginationStyle?: ViewStyle;
 }
 
-declare module "react-native-collapsible" {
-  export = __ReactNativeCollapsible;
+export default class Swiper extends React.Component<SwiperProperties, {}> {
 }
